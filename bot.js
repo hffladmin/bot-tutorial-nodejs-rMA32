@@ -7,9 +7,10 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/coolguy1234554321/; 
       botRegexRoster = /^\/roster/i; 
-      botRegexRules = /^\/rules/
+      botRegexRules = /^\/rules/;
       botRegexSchedule = /^\/schedule/i; 
-      botRegexPlayer = /^\/player/i;  
+      botRegexPlayer = /^\/player/i;
+      botRegexHelp = /^\/help/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -18,6 +19,12 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  else if(request.text && botRegexHelp.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Command List:
+               /roster [team] - Team Roster");
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
