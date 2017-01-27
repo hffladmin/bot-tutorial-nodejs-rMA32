@@ -6,11 +6,11 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/coolguy1234554321/; 
-      botRegexRos = /^\/roster/i; 
-      botRegexRul = /^\/rules/
-      botRegexSch = /^\/schedule/i; 
-      botRegexPla = /^\/player/i; 
-      botRegexTwi = /^\/twitch/i; 
+      botRegexRoster = /^\/roster/i; 
+      botRegexRules = /^\/rules/
+      botRegexSchedule = /^\/schedule/i; 
+      botRegexPlayer = /^\/player/i; 
+      botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -20,25 +20,25 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-  else if(request.text && botRegexRos.test(request.text)) {
+  else if(request.text && botRegexRoster.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
     postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(8,11)+"/depthchart");
     this.res.end();
   } 
   
-  else if(request.text && botRegexRul.test(request.text)) {
+  else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/hffl/rules");
     this.res.end();
   } 
-  else if(request.text && botRegexSch.test(request.text)) {
+  else if(request.text && botRegexSchedule.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(10,13)+"/schedule");
     this.res.end();
   }
-  else if(request.text && botRegexPla.test(request.text)) {
+  else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
@@ -47,7 +47,7 @@ function respond() {
     this.res.end();
   }  
 
-  else if(request.text && botRegexTwi.test(request.text)) {
+  else if(request.text && botRegexTwitch.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
