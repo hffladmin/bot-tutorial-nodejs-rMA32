@@ -10,6 +10,7 @@ function respond() {
       botRegexRules = /^\/rules/
       botRegexSchedule = /^\/schedule/i; 
       botRegexPlayer = /^\/player/i; 
+      botRegexAdmin = /^\/admin; 
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -18,6 +19,11 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  else if(request.text && botRegexAdmin.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(@Jason Vuori);
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
