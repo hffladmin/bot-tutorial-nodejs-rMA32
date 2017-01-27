@@ -52,7 +52,8 @@ function respond() {
   } 
   else if(request.text && botRegexCowbots.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Victor's new team: \n http://www.moochandise.com/cows/cowbot.jpg");
+    postMessage("Victor's new team:");
+    postMessage("http://www.moochandise.com/cows/cowbot.jpg");
     this.res.end();
   } 
   else if(request.text && botRegexPlayer.test(request.text)) {
