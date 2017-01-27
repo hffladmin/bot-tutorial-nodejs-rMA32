@@ -11,6 +11,7 @@ function respond() {
       botRegexSchedule = /^\/schedule/i; 
       botRegexPlayer = /^\/player/i; 
       botRegexTwitch = /^\/twitch/i; 
+      botRegexAdmin = /^\/admin;
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -52,6 +53,11 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   }
+  else if(request.text && botRegexAdmin.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("@Jason Vuori");
+    this.res.end();
+  } 
   
   
   else {
