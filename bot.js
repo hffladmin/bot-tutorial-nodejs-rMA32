@@ -11,7 +11,6 @@ function respond() {
       botRegexSchedule = /^\/schedule/i; 
       botRegexPlayer = /^\/player/i; 
       botRegexTwitch = /^\/twitch/i; 
-      botRegexAdmin = /^\/admin;
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
