@@ -23,8 +23,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Command List:
-               /roster [team] - Team Roster");
+    postMessage("Command List: /roster [team] - Team Roster");
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
