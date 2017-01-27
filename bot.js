@@ -23,7 +23,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /schedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [twitch username] - [Twitch] Channel");
+    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /schedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [username] - Twitch Channel");
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
