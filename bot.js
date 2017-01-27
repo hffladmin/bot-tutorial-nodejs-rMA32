@@ -9,8 +9,7 @@ function respond() {
       botRegexRoster = /^\/roster/i; 
       botRegexRules = /^\/rules/
       botRegexSchedule = /^\/schedule/i; 
-      botRegexPlayer = /^\/player/i; 
-      botRegexAdmin = /^\/admin/; 
+      botRegexPlayer = /^\/player/i;  
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -21,12 +20,6 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-  else if(request.text && botRegexAdmin.test(request.text)) {
-    this.res.writeHead(200);
-    //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage(@Jason Vuori);
-    this.res.end();
-  } 
   else if(request.text && botRegexRoster.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
