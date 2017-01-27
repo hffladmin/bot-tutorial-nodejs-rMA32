@@ -8,7 +8,8 @@ function respond() {
       botRegex = /^\/coolguy1234554321/; 
       botRegexRoster = /^\/roster/i; 
       botRegexRules = /^\/rules/;
-      botRegexSchedule = /^\/schedule/i; 
+      botRegexLeagueSchedule = /^\/lschedule/;
+      botRegexTeamSchedule = /^\/tschedule/i; 
       botRegexPlayer = /^\/player/i;
       botRegexHelp = /^\/help/;
       botRegexTwitch = /^\/twitch/i; 
@@ -23,7 +24,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /schedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [username] - Twitch Channel");
+    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /lschedule - League Schedule \n /tschedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [username] - Twitch Channel");
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
@@ -38,12 +39,17 @@ function respond() {
     postMessage("http://daddyleagues.com/hffl/rules");
     this.res.end();
   } 
-  else if(request.text && botRegexSchedule.test(request.text)) {
+  else if(request.text && botRegexTeamSchedule.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(10,13)+"/schedule");
+    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(11,14)+"/schedule");
     this.res.end();
   }
+  else if(request.text && botRegexLeagueSchedule.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/hffl/schedules");
+    this.res.end();
+  } 
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
