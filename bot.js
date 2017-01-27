@@ -24,7 +24,7 @@ function respond() {
   else if(request.text && botRegexAdmin.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("@Jason Vuori");
+    postMessage(@Jason Vuori);
     this.res.end();
   } 
   else if(request.text && botRegexRoster.test(request.text)) {
