@@ -12,6 +12,7 @@ function respond() {
       botRegexTeamSchedule = /^\/tschedule/i; 
       botRegexPlayer = /^\/player/i;
       botRegexHelp = /^\/help/;
+      botRegexCowbots = /^\/cowbots/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -41,7 +42,6 @@ function respond() {
   } 
   else if(request.text && botRegexTeamSchedule.test(request.text)) {
     this.res.writeHead(200);
-    
     postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(11,14)+"/schedule");
     this.res.end();
   }
@@ -50,15 +50,18 @@ function respond() {
     postMessage("http://daddyleagues.com/hffl/schedules");
     this.res.end();
   } 
+  else if(request.text && botRegexCowbots.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Victor's new team: \n http://www.moochandise.com/cows/cowbot.jpg");
+    this.res.end();
+  } 
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
     var rep = req.replace(/ /,"+");
     postMessage("http://daddyleagues.com/hffl/players?name="+rep+"&position=all&team=all");
-    
     this.res.end();
   }  
-
   else if(request.text && botRegexTwitch.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
