@@ -40,7 +40,7 @@ function respond() {
   }
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
+    var req = request.text.substring(8,request.text.length);
     var rep = req.replace(/ /,"+");
     postMessage("http://daddyleagues.com/hffl/players?name="+rep+"&position=all&team=all");
     
