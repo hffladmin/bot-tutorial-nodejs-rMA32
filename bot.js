@@ -13,6 +13,7 @@ function respond() {
       botRegexPlayer = /^\/player/i;
       botRegexHelp = /^\/help/;
       botRegexCowbots = /^\/cowbots/;
+      botRegexDeadCowbots = /^\/dedcowbots/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -56,6 +57,12 @@ function respond() {
     postMessage("http://www.moochandise.com/cows/cowbot.jpg");
     this.res.end();
   } 
+  else if(request.text && botRegexDeadCowbots.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("RIP");
+    postMessage("https://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
+    this.res.end();
+  }  
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
