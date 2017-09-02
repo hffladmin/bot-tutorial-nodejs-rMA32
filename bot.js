@@ -66,7 +66,7 @@ function respond() {
   }  
   else if(request.text && botRegexAdmin.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("@Jason Vuori");
+    postMessage(@Jason Vuori);
     this.res.end();
   }  
   else if(request.text && botRegexPlayer.test(request.text)) {
