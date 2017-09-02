@@ -14,7 +14,6 @@ function respond() {
       botRegexHelp = /^\/help/;
       botRegexCowbots = /^\/cowbots/;
       botRegexDeadCowbots = /^\/dedcowbots/;
-      botRegexAdmin = /^\/admin/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -62,11 +61,6 @@ function respond() {
     this.res.writeHead(200);
     postMessage("RIP");
     postMessage("https://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
-    this.res.end();
-  }  
-  else if(request.text && botRegexAdmin.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage(@Jason Vuori);
     this.res.end();
   }  
   else if(request.text && botRegexPlayer.test(request.text)) {
