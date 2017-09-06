@@ -14,6 +14,7 @@ function respond() {
       botRegexHelp = /^\/help/;
       botRegexCowbots = /^\/cowbots/;
       botRegexDeadCowbots = /^\/dedcowbots/;
+      botRegexAdmin = /^\/admin/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
