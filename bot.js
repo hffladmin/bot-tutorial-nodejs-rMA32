@@ -69,6 +69,11 @@ function respond() {
     var rep = req.replace(/ /,"+");
     postMessage("http://daddyleagues.com/hffl/players?name="+rep+"&position=all&team=all");
     this.res.end();
+  }
+  else if(request.text && botRegexAdmin.test(request.text)) {
+    this.res.writeHead(200);
+    attach("RIP");
+    this.res.end();
   }  
   else if(request.text && botRegexTwitch.test(request.text)) {
     this.res.writeHead(200);
