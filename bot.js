@@ -73,7 +73,7 @@ function respond() {
   }
   else if(request.text && botRegexAdmin.test(request.text)) {
     this.res.writeHead(200);
-    attach("RIP");
+    attachment("RIP");
     this.res.end();
   }  
   else if(request.text && botRegexTwitch.test(request.text)) {
