@@ -68,9 +68,9 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case" \n Year 1:" ); 
+    postMessage("RIP \n https://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
     this.res.end();
-  }  
+  }
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
