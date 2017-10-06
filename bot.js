@@ -69,7 +69,7 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(":pizza:Trophy Case \n Year 1: Lonzo (LAC)");
+    postMessage("Trophy Case \n Year 1: Lonzo (LAC)");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
