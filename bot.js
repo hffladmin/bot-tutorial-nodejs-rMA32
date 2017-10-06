@@ -68,6 +68,8 @@ function respond() {
   else if(request.text && botRegexRings.test(request.text)) {
     this.res.writeHead(200);
     postMessage(":pizza:Trophy Case:pizza:");
+    var waitTill = new Date(new Date().getTime() + seconds * 1000);
+    while(waitTill > new Date()){}
     postMessage("Year 1");
     this.res.end();
   }  
