@@ -76,7 +76,7 @@ function respond() {
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Oct 10 @ 8PM PST \n Results: https://drive.google.com/open?id=0B4-gSvADOp0gVzMtOG1PSnJQVE0");
+    postMessage("Next Draft: Oct 10 @ 8PM PST \n Results: https://imgur.com/EqRph2h");
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
