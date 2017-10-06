@@ -17,8 +17,6 @@ function respond() {
       botRegexAdmin = /^\/admin/;
       botRegexRings = /^\/rings/;
       botRegexTwitch = /^\/twitch/i; 
-  
-  var waitTill = new Date(new Date().getTime() + seconds * 1000);
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -65,15 +63,13 @@ function respond() {
   } 
   else if(request.text && botRegexDeadCowbots.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("RIP");
-    postMessage("https://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
+    postMessage("RIP \n https://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
     this.res.end();
   }
   else if(request.text && botRegexRings.test(request.text)) {
     this.res.writeHead(200);
     postMessage(":pizza:Trophy Case:pizza:");
-    while(waitTill > new Date()){
-    postMessage("Year 1"); }
+    postMessage("Year 1"); 
     this.res.end();
   }  
   else if(request.text && botRegexPlayer.test(request.text)) {
