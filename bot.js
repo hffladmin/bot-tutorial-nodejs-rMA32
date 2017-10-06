@@ -14,6 +14,7 @@ function respond() {
       botRegexHelp = /^\/help/;
       botRegexCowbots = /^\/cowbots/;
       botRegexDeadCowbots = /^\/dedcowbots/;
+      botRegexWhenIsDraft = /^\/whenisdraft/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTwitch = /^\/twitch/i; 
@@ -71,6 +72,11 @@ function respond() {
     postMessage("Trophy Case \n Year 1:");
     this.res.end();
   }
+  else if(request.text && botRegexWhenIsDraft.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Next Draft: Oct 10 @ 8PM PST \n Results: https://drive.google.com/open?id=0B4-gSvADOp0gVzMtOG1PSnJQVE0");
+    this.res.end();
+  }
   else if(request.text && botRegexPlayer.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
@@ -88,7 +94,7 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   }
-  
+  https://drive.google.com/open?id=0B4-gSvADOp0gVzMtOG1PSnJQVE0
   
   else {
     console.log("don't care");
