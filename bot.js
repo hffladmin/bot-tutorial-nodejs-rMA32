@@ -17,12 +17,14 @@ function respond() {
       botRegexAdmin = /^\/admin/;
       botRegexRings = /^\/rings/;
       botRegexTwitch = /^\/twitch/i; 
+  
+  var waitTill = new Date(new Date().getTime() + seconds * 1000);
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
   
-  var waitTill = new Date(new Date().getTime() + seconds * 1000);
+  
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
