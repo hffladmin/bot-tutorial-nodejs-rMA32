@@ -15,7 +15,7 @@ function respond() {
       botRegexCowbots = /^\/cowbots/;
       botRegexDeadCowbots = /^\/dedcowbots/;
       botRegexWhenIsDraft = /^\/whenisdraft/;
-      botRegexTradeBlock = /^\/tradeblock/;
+      botRegexTradeBlock = /^\/tradeblock/, /^\/ontheblock/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTwitch = /^\/twitch/i; 
