@@ -16,7 +16,8 @@ function respond() {
       botRegexDeadCowbots = /^\/dedcowbots/;
       botRegexWhenIsDraft = /^\/whenisdraft/;
       botRegexTradeBlock = /^\/tradeblock/;
-      botRegexTradeBlock = /^\/ontheblock/;
+      botRegexTradeBlock2 = /^\/ontheblock/;
+      botRegexTradeBlock3 = /^\/ontheblock/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTwitch = /^\/twitch/i; 
@@ -81,6 +82,16 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://otblock.com/");
+    this.res.end();
+  }
+  else if(request.text && botRegexTradeBlock2.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://otblock.com/");
+    this.res.end();
+  }
+  else if(request.text && botRegexTradeBlock3.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://otblock.com/");
     this.res.end();
