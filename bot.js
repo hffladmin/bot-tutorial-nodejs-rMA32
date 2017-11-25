@@ -78,8 +78,7 @@ function respond() {
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    draftCountdown(currentDate);
-    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb \n Remaining Time:");
+    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb \n Remaining Time:" + draftCountdown(currentDate));
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
