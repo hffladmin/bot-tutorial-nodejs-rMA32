@@ -160,7 +160,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function draftCountdown {
+function draftCountdown() {
   // Set the date we're counting down to
   var countDownDate = new Date("Nov 29, 2017 18:00:00").getTime();
   
