@@ -78,7 +78,8 @@ function respond() {
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb \n");
+    draftCountdown(currentDate);
+    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb \n Remaining Time:" + remainingTime);
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
@@ -160,7 +161,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function draftCountdown() {
+function draftCountdown(currentDate) {
   // Set the date we're counting down to
   var countDownDate = new Date("Nov 29, 2017 18:00:00").getTime();
   
