@@ -1,6 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-const request = require("tinyreq");
 
 var botID = process.env.BOT_ID;
 
@@ -79,7 +78,7 @@ function respond() {
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb");
+    postMessage("Next Draft: Nov 29 @ 6PM PST \n Results: https://imgur.com/a/w8CGb \n Remaining Time: https://hffldraftcountdown.herokuapp.com/");
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
