@@ -167,14 +167,14 @@ function draftCountdown() {
   var currentDate = new.Date().getTime();
 
   // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  //var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
   // Find the distance between now an the count down date
-  var remainingTime = countDownDate - now;
-  return remainingTime;
+  //var remainingTime = countDownDate - now;
+  //return remainingTime;
 }
 
 
