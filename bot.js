@@ -164,7 +164,7 @@ function draftCountdown() {
   // Set the date we're counting down to
   var countDownDate = new Date("Nov 29, 2017 18:00:00").getTime();
   
-  var currentDate = new.Date().getTime();
+  var currentDate = Date.now();
 
   // Time calculations for days, hours, minutes and seconds
   //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
