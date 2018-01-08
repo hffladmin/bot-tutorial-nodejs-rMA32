@@ -68,12 +68,12 @@ function respond() {
   else if(request.text && botRegexDeadCowbots.test(request.text)) {
     this.res.writeHead(200);
     postMessage("RIP");
-    postMessage("http://i.groupme.com/219x201.jpeg.85a7cb93b11441e3905645ab727af938");
+    postMessage("https://i.groupme.com/313x287.jpeg.39dd029fdaca43d0915346204c730ebd");
     this.res.end();
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case (Madden 18) \n Year 1: Lonzo (LAC) \n Year 2: Lonzo (LAC)");
+    postMessage("Trophy Case (Madden 18) \n Year 1: Lonzo (LAC) \n Year 2: Lonzo (LAC) \n Year 3: JT (HOU)");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
