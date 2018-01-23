@@ -46,7 +46,7 @@ function respond() {
   
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/hffl/rules");
+    postMessage("https://docs.google.com/document/d/1me1czcJzWLOfWSy8qr8gSViNjLl8h7sbhGnhIr3e_y0/edit?usp=sharing");
     this.res.end();
   } 
   else if(request.text && botRegexTeamSchedule.test(request.text)) {
