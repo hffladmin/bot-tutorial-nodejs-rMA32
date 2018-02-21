@@ -73,12 +73,12 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("Trophy Case (Madden 18) \n Year 1: Lonzo (LAC) \n Year 2: Lonzo (LAC) \n Year 3: JT (HOU) \n Year 4: Victor (DAL)");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Feb 28 @ 6PM PST \n Remaining Time: https://hffldraftcountdown.herokuapp.com/ ");
+    postMessage(" ");
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
