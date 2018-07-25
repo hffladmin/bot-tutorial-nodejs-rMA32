@@ -78,7 +78,7 @@ function respond() {
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Apr 19 @ 6PM PST \n Remaining Time: https://hffldraftcountdown.herokuapp.com/ ");
+    postMessage("Next Draft: Aug 14 @ 6PM PST \n Remaining Time: https://hffldraftcountdown.herokuapp.com/ ");
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
