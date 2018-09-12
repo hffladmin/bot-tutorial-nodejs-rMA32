@@ -2,9 +2,9 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var jquery = require('jquery');
 var request = require('request');
-let cheerio = require('cheerio');
+var cheerio = require('cheerio');
 
-let $ = cheerio.load('https://hffldraftcountdown.herokuapp.com/')
+var $ = cheerio.load('https://hffldraftcountdown.herokuapp.com/')
 
 var companiesList = [];
 
