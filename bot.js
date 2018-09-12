@@ -17,6 +17,7 @@ function respond() {
       botRegexWhenIsDraft = /^\/whenisdraft/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
+      botRegexTrophyCase= /^\/top5/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -88,6 +89,11 @@ function respond() {
   else if(request.text && botRegexAdmin.test(request.text)) {
     this.res.writeHead(200);
     attachment("RIP");
+    this.res.end();
+  }
+  else if(request.text && botRegexTop5.test(request.text)) {
+    this.res.writeHead(200);
+    getTop5();
     this.res.end();
   }  
   else if(request.text && botRegexTwitch.test(request.text)) {
