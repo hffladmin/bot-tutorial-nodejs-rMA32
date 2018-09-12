@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var jquery = require('jquery');
 
 var botID = process.env.BOT_ID;
 
