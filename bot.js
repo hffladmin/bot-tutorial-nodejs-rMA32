@@ -15,9 +15,6 @@ function respond() {
       botRegexCowbots = /^\/cowbots/;
       botRegexDeadCowbots = /^\/dedcowbots/;
       botRegexWhenIsDraft = /^\/whenisdraft/;
-      botRegexTradeBlock = /^\/tradeblock/;
-      botRegexTradeBlock2 = /^\/ontheblock/;
-      botRegexTradeBlock3 = /^\/otb/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTwitch = /^\/twitch/i; 
@@ -79,21 +76,6 @@ function respond() {
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Next Draft: To Be Decided ");
-    this.res.end();
-  }
-  else if(request.text && botRegexTradeBlock.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://otblock.com/");
-    this.res.end();
-  }
-  else if(request.text && botRegexTradeBlock2.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://otblock.com/");
-    this.res.end();
-  }
-  else if(request.text && botRegexTradeBlock3.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://otblock.com/");
     this.res.end();
   }
   else if(request.text && botRegexPlayer.test(request.text)) {
@@ -158,6 +140,13 @@ function postMessage(response) {
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getTop5() {
+  var name = "codemzy";
+   $.get('https://www.freecodecamp.com/' + name, function(response) {
+  console.log(response);
+});
 }
 
 
