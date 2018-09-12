@@ -40,23 +40,23 @@ function respond() {
   else if(request.text && botRegexRoster.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(8,11)+"/depthchart");
+    postMessage("http://daddyleagues.com/hffl19/team/"+request.text.substring(8,11)+"/depthchart");
     this.res.end();
   } 
   
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/document/d/1me1czcJzWLOfWSy8qr8gSViNjLl8h7sbhGnhIr3e_y0/edit?usp=sharing");
+    postMessage("https://www.daddyleagues.com/hffl19/rules");
     this.res.end();
   } 
   else if(request.text && botRegexTeamSchedule.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/hffl/team/"+request.text.substring(11,14)+"/schedule");
+    postMessage("http://daddyleagues.com/hffl19/team/"+request.text.substring(11,14)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexLeagueSchedule.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/hffl/schedules");
+    postMessage("http://daddyleagues.com/hffl19/schedules");
     this.res.end();
   } 
   else if(request.text && botRegexCowbots.test(request.text)) {
@@ -73,12 +73,12 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case (Madden 18) \n Year 1: Lonzo (LAC) \n Year 2: Lonzo (LAC) \n Year 3: JT (HOU) \n Year 4: Victor (DAL) \n Year 5: Victor (DAL)");
+    postMessage("Trophy Case (Madden 19) \n Year 1:");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: Aug 15 @ 6PM PST \n Remaining Time: https://hffldraftcountdown.herokuapp.com/ ");
+    postMessage("Next Draft: To Be Decided ");
     this.res.end();
   }
   else if(request.text && botRegexTradeBlock.test(request.text)) {
@@ -100,7 +100,7 @@ function respond() {
     this.res.writeHead(200);
     var req = request.text.substring(8,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/hffl/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/hffl19/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }
   else if(request.text && botRegexAdmin.test(request.text)) {
