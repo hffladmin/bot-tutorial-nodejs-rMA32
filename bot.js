@@ -167,6 +167,12 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function getTop5() {
+  var name = "codemzy";
+  var url = "http://anyorigin.com/go?url=" + encodeURIComponent("https://www.codewars.com/users/") + name + "&callback=?";
+  $.get(url, function(response) {
+  console.log(response); }); 
+}
 
 
 
