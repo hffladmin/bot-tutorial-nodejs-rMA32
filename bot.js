@@ -150,6 +150,11 @@ function getRandomInt(min, max) {
 }
 
 function getTop5() {
+  var script = document.createElement('script');
+    script.type = 'text/javascript';
+
+    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+    document.body.appendChild(script);
   var name = "codemzy";
    $.get('https://www.freecodecamp.com/' + name, function(response) {
   console.log(response);
