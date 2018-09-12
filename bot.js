@@ -1,5 +1,8 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var request = require('request');
+var cheerio = require('cheerio');
+var url = "https://www.reddit.com/top/";
 
 var botID = process.env.BOT_ID;
 
@@ -159,6 +162,22 @@ function postMessage(response) {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+request(url, function(err, response, html) {
+  if(!err) {
+    var $ = cheerio.load(html);
+    var allitems = $("#siteTable").children();
+    var items = [];
+    allItems.each(function(index) {
+      var result = $("#SiteTable").children().eq(index).children().eq(4).find("a.title").text());
+      if(result !== "") {
+        items.push(result);
+      }
+    });
+    
+    console.log(items);
+  }
+});
 
 
 
