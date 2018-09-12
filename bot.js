@@ -8,25 +8,6 @@ var $ = cheerio.load('https://hffldraftcountdown.herokuapp.com/')
 
 var companiesList = [];
 
-// For each .item, we add all the structure of a company to the companiesList array
-// Don't try to understand what follows because we will do it differently.
-$('.list.items .item').each(function(index, element){
-	companiesList[index] = {};
-	var header = $(element).find('.header');
-	companiesList[index]['name'] = $(header).find('[itemprop=name]').text();
-	companiesList[index]['description'] = $(header).find('[rel=description]').text();
-	companiesList[index]['url'] = $(header).find('.header [itemprop=name] a').getAttribute('href');
-	var contact = $(element).find('.contact');
-	companiesList[index]['contact'] = {};
-	companiesList[index]['contact']['telephone'] = $(contact).find('[itemprop=telephone]').text();
-	companiesList[index]['contact']['employee'] = {};
-	companiesList[index]['contact']['employee']['name'] = $(contact).find('[itemprop=employeeName]').text();
-	companiesList[index]['contact']['employee']['jobTitle'] = $(contact).find('[itemprop=employeeJobTitle]').text();
-	companiesList[index]['contact']['employee']['email'] = $(contact).find('[itemprop=email]').text();
-});
-
-console.log(companiesList); // Output the data in the terminal
-
 
 var botID = process.env.BOT_ID;
 
@@ -176,15 +157,24 @@ function getRandomInt(min, max) {
 }
 
 function getTop5() {
-  var script = document.createElement('script');
-    script.type = 'text/javascript';
 
-    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
-    document.body.appendChild(script);
-  var name = "codemzy";
-   $.get('https://www.freecodecamp.com/' + name, function(response) {
-  console.log(response);
+$('.list.items .item').each(function(index, element){
+	companiesList[index] = {};
+	var header = $(element).find('.header');
+	companiesList[index]['name'] = $(header).find('[itemprop=name]').text();
+	companiesList[index]['description'] = $(header).find('[rel=description]').text();
+	companiesList[index]['url'] = $(header).find('.header [itemprop=name] a').getAttribute('href');
+	var contact = $(element).find('.contact');
+	companiesList[index]['contact'] = {};
+	companiesList[index]['contact']['telephone'] = $(contact).find('[itemprop=telephone]').text();
+	companiesList[index]['contact']['employee'] = {};
+	companiesList[index]['contact']['employee']['name'] = $(contact).find('[itemprop=employeeName]').text();
+	companiesList[index]['contact']['employee']['jobTitle'] = $(contact).find('[itemprop=employeeJobTitle]').text();
+	companiesList[index]['contact']['employee']['email'] = $(contact).find('[itemprop=email]').text();
 });
+
+console.log(companiesList); // Output the data in the terminal
+	
 }
 
 
