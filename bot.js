@@ -1,8 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var request = require('request');
-var cheerio = require('cheerio');
-var url = "https://www.reddit.com/top/";
 
 var botID = process.env.BOT_ID;
 
