@@ -171,6 +171,7 @@ $('.list.items .item').each(function(index, element){
 	companiesList[index]['contact']['employee']['name'] = $(contact).find('[itemprop=employeeName]').text();
 	companiesList[index]['contact']['employee']['jobTitle'] = $(contact).find('[itemprop=employeeJobTitle]').text();
 	companiesList[index]['contact']['employee']['email'] = $(contact).find('[itemprop=email]').text();
+	companiesList[] = "2";
 });
 
 console.log(companiesList); // Output the data in the terminal
