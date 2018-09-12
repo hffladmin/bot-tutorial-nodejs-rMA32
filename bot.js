@@ -169,15 +169,5 @@ function getRandomInt(min, max) {
 
 
 
-function getTop5() {
-  var name = "codemzy";
-  var url = "http://anyorigin.com/go?url=" + encodeURIComponent("https://www.codewars.com/users/") + name + "&callback=?";
-  $.get(url, function(response) {
-  console.log(response);
-});
- 
-
-
-
 
 exports.respond = respond;
