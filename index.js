@@ -7,6 +7,7 @@ bot         = require('./bot.js');
 jquery      = require('jquery');
 cheerio     = require('cheerio');
 request     = require('request');
+request-promise = require('request-promise');
 
 router = new director.http.Router({
   '/' : {
