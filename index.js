@@ -1,10 +1,12 @@
-var http, director, cool, bot, jquery, router, server, port;
+var http, director, cool, bot, jquery, cheerio, request, router, server, port;
 
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 jquery      = require('jquery');
+cheerio     = require('cheerio');
+request     = require('request');
 
 router = new director.http.Router({
   '/' : {
