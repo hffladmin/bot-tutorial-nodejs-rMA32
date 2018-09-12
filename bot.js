@@ -20,6 +20,7 @@ function respond() {
       botRegexTradeBlock3 = /^\/otb/;
       botRegexAdmin = /^\/admin/;
       botRegexTrophyCase= /^\/trophycase/;
+      botRegexTop5= /^\/top5/;
       botRegexTwitch = /^\/twitch/i; 
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -103,6 +104,12 @@ function respond() {
     postMessage("http://daddyleagues.com/hffl19/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }
+  else if(request.text && botRegexTop5.test(request.text)) {
+    this.res.writeHead(200);
+    getTop5();
+    postMessage(response);
+    this.res.end();
+  }  
   else if(request.text && botRegexAdmin.test(request.text)) {
     this.res.writeHead(200);
     attachment("RIP");
@@ -159,6 +166,16 @@ function postMessage(response) {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+
+
+function getTop5() {
+  var name = "codemzy";
+  var url = "http://anyorigin.com/go?url=" + encodeURIComponent("https://www.codewars.com/users/") + name + "&callback=?";
+  $.get(url, function(response) {
+  console.log(response);
+});
+ 
 
 
 
