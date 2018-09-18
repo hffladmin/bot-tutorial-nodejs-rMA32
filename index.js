@@ -4,9 +4,6 @@ http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
-jquery      = require('jquery');
-cheerio     = require('cheerio');
-request     = require('request');
 
 router = new director.http.Router({
   '/' : {
