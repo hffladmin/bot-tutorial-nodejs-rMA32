@@ -1,13 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var jquery = require('jquery');
-var request = require('request');
-var cheerio = require('cheerio');
-
-var $ = cheerio.load('https://hffldraftcountdown.herokuapp.com/')
-
-var companiesList = [];
-
 
 var botID = process.env.BOT_ID;
 
@@ -98,12 +90,7 @@ function respond() {
     this.res.writeHead(200);
     attachment("RIP");
     this.res.end();
-  }
-  else if(request.text && botRegexTop5.test(request.text)) {
-    this.res.writeHead(200);
-    getTop5();
-    this.res.end();
-  }  
+  } 
   else if(request.text && botRegexTwitch.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
@@ -156,29 +143,3 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getTop5() {
-
-$('.list.items .item').each(function(index, element){
-	companiesList[index] = {};
-	var header = $(element).find('.header');
-	companiesList[index]['name'] = $(header).find('[itemprop=name]').text();
-	companiesList[index]['description'] = $(header).find('[rel=description]').text();
-	companiesList[index]['url'] = $(header).find('.header [itemprop=name] a').getAttribute('href');
-	var contact = $(element).find('.contact');
-	companiesList[index]['contact'] = {};
-	companiesList[index]['contact']['telephone'] = $(contact).find('[itemprop=telephone]').text();
-	companiesList[index]['contact']['employee'] = {};
-	companiesList[index]['contact']['employee']['name'] = $(contact).find('[itemprop=employeeName]').text();
-	companiesList[index]['contact']['employee']['jobTitle'] = $(contact).find('[itemprop=employeeJobTitle]').text();
-	companiesList[index]['contact']['employee']['email'] = $(contact).find('[itemprop=email]').text();
-});
-	companiesList = "2";
-
-console.log(companiesList); // Output the data in the terminal
-	
-}
-
-
-
-
-exports.respond = respond;
