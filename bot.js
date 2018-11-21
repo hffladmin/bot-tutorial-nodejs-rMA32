@@ -71,7 +71,7 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case (Madden 19) \n Year 1:");
+    postMessage("Trophy Case (Madden 19) \n Year 1: Biz (Jaguars)");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
