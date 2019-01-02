@@ -32,7 +32,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /lschedule - League Schedule \n /tschedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [username] - Twitch Channel \n /trophycase - Shows Superbowl Winners \n /whenisdraft - Information For Next Draft \n /tradeblock - Link To Trade Block  \n \n Am I broken or shitty? Yell at Charlotte.");
+    postMessage("Command List: \n /roster [team] - [Team] Roster \n /rules - Rules Page \n /lschedule - League Schedule \n /tschedule [team] - [Team] Schedule \n /player [player name] - [Player]'s Stats \n /twitch [username] - Twitch Channel \n /trophycase - Shows Superbowl Winners \n /whenisdraft - Information For Next Draft  \n \n Am I broken or shitty? Yell at Charlotte.");
     this.res.end();
   }
   else if(request.text && botRegexRoster.test(request.text)) {
@@ -71,7 +71,7 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case (Madden 19) \n Year 1: Biz (Jaguars)");
+    postMessage("Trophy Case (Madden 19) \n Year 1: Biz (Jaguars) \n Year 2: JT (Falcons)");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
