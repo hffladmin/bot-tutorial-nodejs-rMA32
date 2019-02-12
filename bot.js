@@ -16,6 +16,7 @@ function respond() {
       botRegexDeadCowbots = /^\/dedcowbots/;
       botRegexWhenIsDraft = /^\/whenisdraft/;
       botRegexAdmin = /^\/admin/;
+      botRegexDanny = /^\/danny/;
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTop5= /^\/top5/;
       botRegexTwitch = /^\/twitch/i; 
@@ -67,6 +68,12 @@ function respond() {
     this.res.writeHead(200);
     postMessage("RIP");
     postMessage("https://i.groupme.com/313x287.jpeg.39dd029fdaca43d0915346204c730ebd");
+    this.res.end();
+  }
+  else if(request.text && botRegexDanny.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("RIP");
+    postMessage("https://i.imgur.com/yFw2JOL.jpg");
     this.res.end();
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
