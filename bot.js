@@ -72,7 +72,6 @@ function respond() {
   }
   else if(request.text && botRegexDanny.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("RIP");
     postMessage("https://i.imgur.com/yFw2JOL.jpg");
     this.res.end();
   }
