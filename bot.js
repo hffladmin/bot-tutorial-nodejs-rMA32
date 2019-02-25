@@ -79,7 +79,7 @@ function respond() {
     postMessage("https://i.imgur.com/yFw2JOL.jpg");
     this.res.end();
   }
-   else if(request.text && botRegexSiege.test(request.text)) {
+   else if(request.text && botRegexMikey.test(request.text)) {
     this.res.writeHead(200);
     if(0.5 >= Math.random() > 0)
       postMessage(mikey1);
