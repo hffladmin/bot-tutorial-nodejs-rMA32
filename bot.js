@@ -21,9 +21,9 @@ function respond() {
       botRegexTrophyCase= /^\/trophycase/;
       botRegexTop5= /^\/top5/;
       botRegexTwitch = /^\/twitch/i; 
-      mikey1 = "https://i.groupme.com/285x440.jpeg.780fe5c310ba49f0b62aa612b9c4965c.large"
-      mikey2 = "https://i.groupme.com/723x1125.jpeg.1cf8863794af496c99673f6a77e46448.large"
-      mikey3 = "https://i.groupme.com/691x978.jpeg.d2a2c3df2ca54104a7aa98c0a746d380.large"
+      mikey1 = "https://i.groupme.com/285x440.jpeg.780fe5c310ba49f0b62aa612b9c4965c.large";
+      mikey2 = "https://i.groupme.com/723x1125.jpeg.1cf8863794af496c99673f6a77e46448.large";
+      mikey3 = "https://i.groupme.com/691x978.jpeg.d2a2c3df2ca54104a7aa98c0a746d380.large";
       
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
