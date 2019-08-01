@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/coolguy1234554321/; 
-      botRegexRoster = /^\/roster/i; 
+      botRegexRoster = /^\/roster/; 
       botRegexRules = /^\/rules/;
       botRegexLeagueSchedule = /^\/lschedule/;
       botRegexTeamSchedule = /^\/tschedule/i; 
@@ -91,12 +91,12 @@ function respond() {
   }
   else if(request.text && botRegexTrophyCase.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Trophy Case (Madden 19) \n Year 1: Biz (Jaguars) \n Year 2: JT (Falcons)");
+    postMessage("Trophy Case (Madden 20) ");
     this.res.end();
   }
   else if(request.text && botRegexWhenIsDraft.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Next Draft: To Be Decided ");
+    postMessage("Next Draft: 8/11 (Sunday) @ 6PST");
     this.res.end();
   }
   else if(request.text && botRegexPlayer.test(request.text)) {
